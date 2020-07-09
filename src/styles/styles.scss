@@ -1,0 +1,12 @@
+@import "./colors";
+
+.hello {
+  background-color: orangered;
+  color: green;
+
+  &__price {
+    color: white;
+    font-weight: 900;
+    font-size: 2rem;
+  }
+}
