@@ -4,7 +4,7 @@
 
 ## 📝 Resumen
 
-Boilerplate con configuraciones necesarias para automatizar el trabajo en el desarrollo de un sitio web.
+Boilerplate para iniciar directamente un proyecto web con las caracteristicas que todo desarrollador necesita: "babel, sass, pug, webpack dev server y más."
 
 ## 🧐 ¿Qué contiene?
 
@@ -38,7 +38,7 @@ Boilerplate con configuraciones necesarias para automatizar el trabajo en el des
 - IMAGES (PNG, SVG, JPG, WEBP)
 - WDS (Webpack dev server)
 
-## Scripts
+## 💻 Scripts
 
 1. `npm start` : Crea un servidor de desarrollo gracias a `webpack-dev-server` en el puerto `3300` por default.
 2. `npm run build:dev` : Empaqueta el proyecto en una carpeta `public` sin minificar, usando el archivo `webpack.dev.js`.
