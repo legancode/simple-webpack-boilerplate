@@ -16,11 +16,12 @@ Boilerplate para iniciar directamente un proyecto web con las caracteristicas qu
      ├─ views
 ├── .babelrc
 ├── .gitignore
-├── package-lock.json
 ├── package.json
-├── webpack.config.js
+├── package-lock.json
+├── README.md
+├── webpack.common.js
+├── webpack.dev.js
 ├── webpack.prod.js
-└── README.md
 ```
 
 ## 💻 Para ejecutar
