@@ -1,11 +1,10 @@
-<!DOCTYPE html>
-html(lang="es")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title This is my pug template
-  body
-    main
-      h1 Pug rules
-      a(href="/about") About
-      a(href="/contact") Contact
+extends templates/layout.pug
+
+block menu
+  nav.main__menu
+    a.main__link.active(href="/") Home
+    a.main__link(href="/about") About
+    a.main__link(href="/contact") Contact
+
+block prepend content
+  h2.content__title The Home Page

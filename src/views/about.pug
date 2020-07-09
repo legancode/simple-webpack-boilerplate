@@ -1,12 +1,10 @@
-doctype html
-html(lang="es")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title This is the about page
-  body
-    h1 About Page
-    a(href="/index") Home
-    a(href="/contact") Contact
-    .card Card
-      .card__title Titulo
+extends templates/layout.pug
+
+block menu
+  nav.main__menu
+    a.main__link(href="/") Home
+    a.main__link.active(href="/about") About
+    a.main__link(href="/contact") Contact
+
+block prepend content
+  h2.content__title The About Page

@@ -1,10 +1,8 @@
 const path = require("path");
 const { merge } = require("webpack-merge");
+const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // Extraer en archivo global el CSS
 const common = require("./webpack.common");
 const BUILD_DIR = path.resolve(__dirname, "./public");
-const OptimizeCssAssetsPlugin = require("optimize-css-assets-webpack-plugin"); // Optimizar build de CSS
-const MiniCssExtractPlugin = require("mini-css-extract-plugin"); // Extraer en archivo global el CSS
-const MinifyPlugin = require("babel-minify-webpack-plugin"); // Minificacion de JS con babel
 
 // ========================================
 // HTML / PUG
@@ -14,47 +12,44 @@ const html = {
   loader: "html-loader",
   options: {
     attributes: false,
-    minimize: true,
+    minimize: false,
   },
 };
 
 const pug = {
   test: /\.pug$/,
   loader: "pug-loader",
-  options: { pretty: false },
+  options: { pretty: true },
 };
 
 // ========================================
-// BABEL
+// DEV SERVER
 // ========================================
-const babel = {
-  test: /\.js$/,
-  exclude: /node_modules/,
-  use: ["babel-loader"],
+const devServer = {
+  contentBase: BUILD_DIR,
+  compress: true,
+  port: 3300,
 };
 
 // ========================================
 // CONFIG
 // ========================================
-let prodConfig = {
-  mode: "production",
+let devConfig = {
+  mode: "development",
   output: {
-    filename: "scripts/[name].bundle.[contentHash].js",
+    filename: "scripts/[name].bundle.js",
     path: BUILD_DIR,
   },
-  optimization: {
-    minimizer: [new OptimizeCssAssetsPlugin()],
-  },
   module: {
-    rules: [html, pug, babel],
+    rules: [html, pug],
   },
   plugins: [
     new MiniCssExtractPlugin({
-      filename: "css/[name].[contentHash].css",
+      filename: "css/[name].css",
       ignoreOrder: false,
     }),
-    new MinifyPlugin(),
   ],
+  devServer,
 };
 
-module.exports = merge(common, prodConfig);
+module.exports = merge(common, devConfig);

@@ -1,2 +1,3 @@
+import "./styles/styles.scss";
 import "./styles/about.scss";
-console.log("about page");
+console.log("This is about page");

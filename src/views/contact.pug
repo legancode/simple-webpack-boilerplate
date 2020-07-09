@@ -1,10 +1,10 @@
-<!DOCTYPE html>
-html(lang="en")
-  head
-    meta(charset="UTF-8")
-    meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title This is the contact page
-  body
-    h1 Contact Page
-    a(href="/index") Home
-    a(href="/about") About
+extends templates/layout.pug
+
+block menu
+  nav.main__menu
+    a.main__link(href="/") Home
+    a.main__link(href="/about") About
+    a.main__link.active(href="/contact") Contact
+
+block prepend content
+  h2.content__title The Contact Page

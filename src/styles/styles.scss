@@ -1,12 +1,69 @@
-@import "./colors";
+@import "./variables";
 
-.hello {
-  background-color: orangered;
-  color: green;
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-  &__price {
-    color: white;
-    font-weight: 900;
-    font-size: 2rem;
+body {
+  display: flex;
+  justify-content: center;
+  background-color: $bg;
+  font-family: $fontSize;
+}
+
+.main {
+  margin-top: 2rem;
+
+  &__title {
+    color: $white;
+  }
+
+  &__subtitle {
+    display: block;
+    text-align: right;
+    color: $gray;
+  }
+
+  &__menu {
+    margin-top: 2rem;
+    border: 1px dashed $white;
+    display: flex;
+  }
+
+  &__link {
+    flex: 1;
+    padding: 0.5rem 1rem;
+    color: $white;
+    text-decoration: none;
+    text-align: center;
+
+    &:hover,
+    &.active {
+      background-color: $white;
+      color: $bg;
+      font-weight: 700;
+    }
   }
 }
+
+.content {
+  margin-top: 3rem;
+  &__title {
+    color: $white;
+    margin-bottom: 1.5rem;
+    text-align: center;
+  }
+
+  &__desc {
+    max-width: 300px;
+    margin: 0 auto;
+    text-align: center;
+    color: $white;
+  }
+}
+
+@import "./utils";
